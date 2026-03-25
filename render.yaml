@@ -1,0 +1,15 @@
+services:
+  - type: cron
+    name: browserless-key-harvester
+    runtime: image
+    repo: https://github.com/YOUR_USERNAME/browserless-key-harvester
+    region: frankfurt
+    schedule: "0 23 * * *"
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: MAX_ACCOUNTS_PER_DAY
+        value: "5"
+      - key: START_HOUR
+        value: "23"
+      - key: END_HOUR
+        value: "0"
